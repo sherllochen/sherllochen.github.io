@@ -1,6 +1,8 @@
 ---
 title: Most easy to use tutorial for deploy Rails application with Docker & Capistrano in 15 steps
 date: 2020-02-09 03:45:39
+keywords: docker capistrano rails
+description:
 tags:
   - rails
   - docker

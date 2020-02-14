@@ -1,6 +1,8 @@
 ---
 title: Set proxy for terminal on mac
 date: 2020-02-09 03:19:35
+keywords: proxy shadowsocks mac
+description:
 tags: 
   - mac
 ---

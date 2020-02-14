@@ -1,6 +1,8 @@
 ---
 title: Most simple ELK stack solution for independent developer
 date: 2020-02-06 10:18:46
+keywords: elk logging filebeat
+description:
 tags: 
 	- ELK
 ---
