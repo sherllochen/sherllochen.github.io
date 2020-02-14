@@ -27,7 +27,7 @@ node_js:
 cache: npm
 branches:
   only:
-    - hexo-source # store source code in hexo-source branch
+    - hexo-source # store source code in hexo-source branch, this is where I fix.
 script:
   - hexo generate # generate static files
 deploy:
@@ -35,9 +35,9 @@ deploy:
   skip-cleanup: true
   github-token: $GH_TOKEN
   keep-history: true
-  target_branch: master # generate static files to master
+  target_branch: master # generate static files to master, this is where I fix.
   on:
-    branch: hexo-source # read source from hexo-source branch
+    branch: hexo-source # read source from hexo-source branch, this is where I fix.
   local-dir: public
 ```
 9. Once Travis CI finish the deployment, the generated pages can be found in the `gh-pages` branch of your repository

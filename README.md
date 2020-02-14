@@ -1,5 +1,5 @@
 https://github.com/sherllochen/sherllochen.github.io.git
-Source code of this blog is in hexo-source(also the default branch).Static pages Will be generated and deploy to gh-pages branch.
+Source code of this blog is in hexo-source(also the default branch). Static pages will be generated and deploy to gh-pages branch.
 
 ## Get ready to write.
 1. Build docker image. Skip if it has been build.
@@ -21,7 +21,7 @@ hexo new [post|page|draft] <title>
 ```
 
 # Deploy
-Base setup document for deployint to github pages is [here](https://sherllochen.github.io/2020/01/16/deploy-to-github-pages/).
+Base setup document for deploying to github pages is [here](https://sherllochen.github.io/2020/01/16/deploy-to-github-pages/).
 Once new commit puth to hexo-souce, travis will deploy the update to github pages automaticly.
 ```bash
 git push origin hexo-source
