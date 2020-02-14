@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://sherllochen.github.io').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Shadowsocks ProxyServer-side setup1234apt-get install python-pippip install shadowsockssudo ssserver -p 443 -k password -m aes-256-cfb --user nobody -d start   Client-side setup Install Shadowsocks Cl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Set proxy for terminal on mac">
+<meta property="og:url" content="http://sherllochen.github.io/set-proxy-for-terminal-on-mac/index.html">
+<meta property="og:site_name" content="Sherllo Chen">
+<meta property="og:description" content="Shadowsocks ProxyServer-side setup1234apt-get install python-pippip install shadowsockssudo ssserver -p 443 -k password -m aes-256-cfb --user nobody -d start   Client-side setup Install Shadowsocks Cl">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-09T03:19:35.000Z">
+<meta property="article:modified_time" content="2020-02-14T02:26:11.331Z">
+<meta property="article:author" content="Sherllo Chen">
+<meta property="article:tag" content="mac">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://sherllochen.github.io/set-proxy-for-terminal-on-mac/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Set proxy for terminal on mac | Sherllo Chen</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154986050-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-154986050-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?8d25b4e14bfaf04ec364df309eb9ee01";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Sherllo Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Independent IT consultant pursuing freedom</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about-me/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-portfolios">
+
+    <a href="/portfolios/" rel="section"><i class="fa fa-fw fa-star"></i>portfolios</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sherllochen.github.io/set-proxy-for-terminal-on-mac/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sherllo Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sherllo Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Set proxy for terminal on mac
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-09 03:19:35" itemprop="dateCreated datePublished" datetime="2020-02-09T03:19:35+00:00">2020-02-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-14 02:26:11" itemprop="dateModified" datetime="2020-02-14T02:26:11+00:00">2020-02-14</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-users"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="firestore-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/set-proxy-for-terminal-on-mac/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="set-proxy-for-terminal-on-mac/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Shadowsocks-Proxy"><a href="#Shadowsocks-Proxy" class="headerlink" title="Shadowsocks Proxy"></a>Shadowsocks Proxy</h2><h3 id="Server-side-setup"><a href="#Server-side-setup" class="headerlink" title="Server-side setup"></a><a href="https://github.com/shadowsocks/shadowsocks" target="_blank" rel="noopener">Server-side setup</a></h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install python-pip</span><br><span class="line">pip install shadowsocks</span><br><span class="line"></span><br><span class="line">sudo ssserver -p 443 -k password -m aes-256-cfb --user nobody -d start</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Client-side-setup"><a href="#Client-side-setup" class="headerlink" title="Client-side setup"></a>Client-side setup</h3><ul>
+<li>Install Shadowsocks Client, e.g. run <code>brew cask install shadowsocksx</code> in macOS.</li>
+<li>SwitchSharp</li>
+</ul>
+<blockquote>
+<p>Only config <code>SOCKS Host</code> to <code>127.0.0.1:1080</code> and select <code>SOCKS v5</code></p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="SOCKS-5-Through-SSH-Tunnel"><a href="#SOCKS-5-Through-SSH-Tunnel" class="headerlink" title="SOCKS 5 Through SSH Tunnel"></a>SOCKS 5 Through SSH Tunnel</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># `-N`: do not execute commands</span></span><br><span class="line"><span class="comment"># `-D`: bind 1080 port and forward 1080 port to 22 port</span></span><br><span class="line"><span class="comment"># `-i`: use pre-shared key `hello.pem`</span></span><br><span class="line"><span class="comment"># `-p`: specify port used to connect to remote server</span></span><br><span class="line">ssh -ND 1080 -i ~/.ssh/hello.pem &lt;username&gt;@&lt;your-remote-server-ip&gt; -p 22</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="http://askubuntu.com/questions/143303/how-do-i-set-up-a-linux-proxy-for-my-mac" target="_blank" rel="noopener">how-do-i-set-up-a-linux-proxy-for-my-mac by askubuntu</a></li>
+</ul>
+<h2 id="SOCKS-5-in-Terminal"><a href="#SOCKS-5-in-Terminal" class="headerlink" title="SOCKS 5 in Terminal"></a>SOCKS 5 in Terminal</h2><h3 id="Using-Proxychains-ng-to-socksify-your-command"><a href="#Using-Proxychains-ng-to-socksify-your-command" class="headerlink" title="Using Proxychains-ng to socksify your command"></a>Using Proxychains-ng to socksify your command</h3><ul>
+<li>Install <code>proxychains-ng</code> by running <code>brew install proxychains-ng</code>.</li>
+<li>Config <code>/usr/local/Cellar/proxychains-ng/4.7/etc/proxychains.conf</code>, modify the following parameters.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[ProxyList]</span><br><span class="line">socks5 127.0.0.1 1080</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Add <code>proxychains4</code> to the front of every command, e.g. <code>proxychains4 curl ipecho.net/plain</code></li>
+</ul>
+<blockquote>
+<p>Also works for Application like <code>Google Chrome</code> while <code>Safari</code> does not work, try <code>proxychains4 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome</code>.<br>But this might slow down Chrome. </p>
+</blockquote>
+<blockquote>
+<p>You can also use <a href="http://monkey.org/~dugsong/dsocks/" target="_blank" rel="noopener">dsocks</a> for mac(which does not work for me), <a href="http://tsocks.sourceforge.net/" target="_blank" rel="noopener">tsocks</a> for linux.</p>
+</blockquote>
+<h2 id="Using-Unix-Proxy-Environment-Variable"><a href="#Using-Unix-Proxy-Environment-Variable" class="headerlink" title="Using Unix Proxy Environment Variable"></a>Using Unix Proxy Environment Variable</h2><p>Add this script to <code>~/.bash_profile</code>.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=socks5://127.0.0.1:1080</span><br><span class="line"><span class="built_in">export</span> https_proxy=socks5://127.0.0.1:1080</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Config-curl-to-use-SOCKS5-Also-works-for-homebrew"><a href="#Config-curl-to-use-SOCKS5-Also-works-for-homebrew" class="headerlink" title="Config curl to use SOCKS5(Also works for homebrew)"></a>Config <code>curl</code> to use SOCKS5(Also works for <code>homebrew</code>)</h2><p>Add the following line to <code>~/.curlrc</code>. Since <code>homebrew</code> use <code>curl</code> to download the package, this will also enable <code>homebrew</code> to use SOCKS5.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">socks5 &#x3D; &quot;socks5:&#x2F;&#x2F;127.0.0.1:1080&quot;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>There are no environment variables for SOCKS5 proxy servers in unix, so in order to use SOCKS5 in other utilities, check the man pages for existing tools to see if they have a configuration option for a SOCKS5 proxy and whether they have a configuration file that the configuration can be added to.</p>
+</blockquote>
+<h2 id="Config-git-to-use-SOCKS5"><a href="#Config-git-to-use-SOCKS5" class="headerlink" title="Config git to use SOCKS5"></a>Config <code>git</code> to use SOCKS5</h2><ul>
+<li>For <code>https://</code> and <code>http://</code>(e.g. <code>http://github.com</code>, <code>https://github.com</code>), run the following script.</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br><span class="line">git config --global https.proxy <span class="string">'socks5://127.0.0.1:1080'</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>For <code>git://</code>(e.g. <code>git://github.com</code>), run <code>git config --global core.gitproxy &#39;socks5://127.0.0.1:1080&#39;</code></li>
+<li>For ssh(e.g. <code>git@github.com</code>,<code>ssh://git@github.com</code>), add <code>ProxyCommand nc -x localhost:1080 %h %p</code> to <code>~/.ssh/config</code> file.</li>
+</ul>
+<blockquote>
+<p><code>git config --global</code> is stored in <code>~/.gitconfig</code> while local config settings is in <code>./.git/config</code>.<br>To remove a configuration, e.g. run <code>git config --global --unset core.gitproxy</code>.</p>
+</blockquote>
+<h2 id="Reference-1"><a href="#Reference-1" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://askubuntu.com/questions/610333/how-to-set-socks5-proxy-in-the-terminal" target="_blank" rel="noopener">how to set socks5 proxy in the terminal by askubuntu</a></li>
+<li><a href="http://superuser.com/questions/377199/os-x-terminal-ignoring-socks-proxy-setup" target="_blank" rel="noopener">OS X Terminal Ignoring SOCKS Proxy Setup</a></li>
+<li><a href="http://cms-sw.github.io/tutorial-proxy.html" target="_blank" rel="noopener">Git proxy through SOCKS 5 by cms-sw</a></li>
+<li><a href="http://segmentfault.com/q/1010000000118837" target="_blank" rel="noopener">git proxy on segmentfault</a></li>
+</ul>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="Test-wheather-proxy-works"><a href="#Test-wheather-proxy-works" class="headerlink" title="Test wheather proxy works."></a>Test wheather proxy works.</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --socks5-hostname 127.0.0.1:1080 http://wtfismyip.com/json</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/mac/" rel="tag"># mac</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/Most-simple-ELK-stack-solution-for-independent-developer/" rel="prev" title="Most simple ELK stack solution for independent developer">
+      <i class="fa fa-chevron-left"></i> Most simple ELK stack solution for independent developer
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/most-easy-to-use-tutorial-for-deploy-rails-application-with-docker-capistrano-in-15-steps/" rel="next" title="Most easy to use tutorial for deploy Rails application with Docker & Capistrano in 15 steps">
+      Most easy to use tutorial for deploy Rails application with Docker & Capistrano in 15 steps <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    
+  <div class="comments" id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shadowsocks-Proxy"><span class="nav-number">1.</span> <span class="nav-text">Shadowsocks Proxy</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Server-side-setup"><span class="nav-number">1.1.</span> <span class="nav-text">Server-side setup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Client-side-setup"><span class="nav-number">1.2.</span> <span class="nav-text">Client-side setup</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOCKS-5-Through-SSH-Tunnel"><span class="nav-number">2.</span> <span class="nav-text">SOCKS 5 Through SSH Tunnel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">2.1.</span> <span class="nav-text">Reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOCKS-5-in-Terminal"><span class="nav-number">3.</span> <span class="nav-text">SOCKS 5 in Terminal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-Proxychains-ng-to-socksify-your-command"><span class="nav-number">3.1.</span> <span class="nav-text">Using Proxychains-ng to socksify your command</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Unix-Proxy-Environment-Variable"><span class="nav-number">4.</span> <span class="nav-text">Using Unix Proxy Environment Variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Config-curl-to-use-SOCKS5-Also-works-for-homebrew"><span class="nav-number">5.</span> <span class="nav-text">Config curl to use SOCKS5(Also works for homebrew)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Config-git-to-use-SOCKS5"><span class="nav-number">6.</span> <span class="nav-text">Config git to use SOCKS5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference-1"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">8.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Test-wheather-proxy-works"><span class="nav-number">8.1.</span> <span class="nav-text">Test wheather proxy works.</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sherllo Chen</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sherllochen" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sherllochen" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sherllochen@gmail.com" title="E-Mail → mailto:sherllochen@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-Envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sherllo Chen</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+  <script>
+    firebase.initializeApp({
+      apiKey: 'AIzaSyB424UJ0GHAQZPefXquIHZPlA4RLjCR2TM',
+      projectId: 'sherllo-blog'
+    });
+
+    function getCount(doc, increaseCount) {
+      // IncreaseCount will be false when not in article page
+      return doc.get().then(d => {
+        var count = 0;
+        if (!d.exists) { // Has no data, initialize count
+          if (increaseCount) {
+            doc.set({
+              count: 1
+            });
+            count = 1;
+          }
+        } else { // Has data
+          count = d.data().count;
+          if (increaseCount) {
+            // If first view this article
+            doc.set({ // Increase count
+              count: count + 1
+            });
+            count++;
+          }
+        }
+
+        return count;
+      });
+    }
+
+    function appendCountTo(el) {
+      return count => {
+        el.innerText = count;
+      }
+    }
+  </script>
+  <script>
+    (function() {
+      var db = firebase.firestore();
+      var articles = db.collection('articles');
+
+      if (CONFIG.page.isPost) { // Is article page
+        var title = document.querySelector('.post-title').innerText.trim();
+        var doc = articles.doc(title);
+        var increaseCount = CONFIG.hostname === location.hostname;
+        if (localStorage.getItem(title)) {
+          increaseCount = false;
+        } else {
+          // Mark as visited
+          localStorage.setItem(title, true);
+        }
+        getCount(doc, increaseCount).then(appendCountTo(document.querySelector('.firestore-visitors-count')));
+      } else if (CONFIG.page.isHome) { // Is index page
+        var promises = [...document.querySelectorAll('.post-title')].map(element => {
+          var title = element.innerText.trim();
+          var doc = articles.doc(title);
+          return getCount(doc);
+        });
+        Promise.all(promises).then(counts => {
+          var metas = document.querySelectorAll('.firestore-visitors-count');
+          counts.forEach((val, idx) => {
+            appendCountTo(metas[idx])(val);
+          });
+        });
+      }
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blog-of-sherllo.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  function loadComments() {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: {page: {
+            url: "http://sherllochen.github.io/set-proxy-for-terminal-on-mac/",
+            identifier: "set-proxy-for-terminal-on-mac/",
+            title: "Set proxy for terminal on mac"
+          }
+        }
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-of-sherllo.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  }
+    window.addEventListener('load', loadComments, false);
+</script>
+
+</body>
+</html>
