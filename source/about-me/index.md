@@ -14,7 +14,7 @@ Independent IT consultant.
 - Github: [https://github.com/sherllochen/](https://github.com/sherllochen/)
 - Blog: [https://sherllo.com](https://sherllo.com/)
 
-**Creed：**Learning and growing by doing.
+**Creed**: Learning and growing by doing.
 
 ## What I have done
 
